@@ -1,0 +1,49 @@
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	font-size: 13px;
+	line-height: 20px;
+	margin: 0px;
+	background-color: #f1f5f8;
+}
+
+.main-section {
+	padding: 50px;
+}
+
+.title-and-tools {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.my-bots-title {
+	flex: 1 1;
+	font-size: 2em;
+	padding-top: 5px;
+}
+
+.bots-list {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 1;
+}
+
+.bot-card-platforms {
+	padding: 20px;
+}
+
+.float-right{
+	float: right;
+	margin: -16px -26px 0 0;
+}
+
+.no-results {
+	font-size: 20px;
+	margin: 50px auto;
+}
+
+.platform-icon {
+	margin-right: 10px;
+}
