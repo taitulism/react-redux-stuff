@@ -5,7 +5,6 @@ export function addBot (botName, description) {
 		type: types.ADD_BOT,
 		botName,
 		description,
-		isOnline: true,
 		platforms: ['web', 'ios']
 	};
 }

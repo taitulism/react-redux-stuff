@@ -54,7 +54,7 @@ class BotItem extends Component {
 	render() {
 		const index   = this.props.index;
 		const actions = this.props.actions;
-		const { id, botName, description, isOnline, platforms } = this.props.botData;
+		const { id, botName, description, platforms } = this.props.botData;
 		const platformIcons = this.getPlatformIcons(platforms);
 
 		return (
@@ -70,7 +70,6 @@ class BotItem extends Component {
 				<Divider />
 				<CardText className="bot-card-platforms">
 					<div>{platformIcons}</div>
-					<div>{isOnline}</div>
 				</CardText>
 			</Card>
 		);

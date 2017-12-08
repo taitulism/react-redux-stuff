@@ -8,22 +8,18 @@ import {
 const initialState = [{
 		botName: 'A Bot',
 		description: 'Bot bot bot',
-		isOnline: true,
 		platforms: ['web', 'android', 'ios', 'sms', 'facebook']
 	}, {
 		botName: 'Another Bot',
 		description: 'Yadi yada',
-		isOnline: true,
 		platforms: ['web', 'facebook']
 	},{
 		botName: 'My Bot',
 		description: 'is better than yours',
-		isOnline: true,
 		platforms: ['web', 'sms']
 	}, {
 		botName: 'Your Bot',
 		description: 'bla bla bla',
-		isOnline: true,
 		platforms: ['android', 'ios', 'facebook']
 }];
 
@@ -31,7 +27,6 @@ export default function bots (state = initialState, action) {
 	switch (action.type) {
 		case ADD_BOT:
 			return [{
-				isOnline    : action.isOnline,
 				botName     : action.botName,
 				description : action.description,
 				platforms   : action.platforms
