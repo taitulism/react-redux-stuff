@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
-import Add from 'material-ui/svg-icons/content/add-circle';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 class BotDialog extends Component {

@@ -1,11 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Card, CardTitle, CardHeader, CardText } from 'material-ui';
-import {GridList, GridTile} from 'material-ui/GridList';
-import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
-import Settings from 'material-ui/svg-icons/action/settings';
+import { Card, CardHeader, CardText } from 'material-ui';
 import Divider from 'material-ui/Divider';
 import BotSettings from './BotSettings';
 

@@ -2,7 +2,6 @@ import {
 	ADD_BOT,
 	RENAME_BOT,
 	CLONE_BOT,
-	EXPORT_BOT,
 	DELETE_BOT
 } from '../constants/ActionTypes';
 
