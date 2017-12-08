@@ -10,9 +10,12 @@ class BotDialog extends Component {
 	constructor (props) {
 		super(props);
 
+		const botName     = props.botData ? props.botData.botName     : '';
+		const description = props.botData ? props.botData.description : '';
+
 		this.state = {
-			botName: props.botData.botName || '',
-			description: props.botData.description || ''
+			botName,
+			description
 		};
 	}
 
@@ -33,24 +36,27 @@ class BotDialog extends Component {
 	}
 
 	saveBot = () => {
+		const {actions, editBotIndex} = this.props;
 		const {botName, description} = this.state;
 		const index = this.props.editBotIndex;
 
-		this.props.actions.renameBot(index, botName, description);
+
+		if (editBotIndex) {
+			actions.renameBot(index, botName, description);
+		}
+		else {
+			actions.addBot(botName, description);
+		}
 		
-		this.props.actions.closeDialog();
+		actions.closeDialog();
 	}
 
 	closeDialog = () => {
 		this.props.actions.closeDialog();
 	}
 
-	render() {
-		const { editBotIndex, botData, actions } = this.props;
-		const { botName, description } = botData;
-		const dialogTitle = botName ? 'Rename Bot' : 'Create New Bot';
-
-		const ButtonActions = [
+	renderActionButtons () {
+		return [
 			<FlatButton
 				label="Cancel"
 				primary={true}
@@ -62,7 +68,15 @@ class BotDialog extends Component {
 				keyboardFocused={true}
 				onClick={this.saveBot}
 			/>
-		];
+		]
+	}
+
+	render() {
+		const { editBotIndex, botData, actions } = this.props;
+		const {botName, description} = this.state;
+		const dialogTitle = botName ? 'Rename Bot' : 'Create New Bot';
+
+		const ButtonActions = this.renderActionButtons();
 
 		return (
 			<Dialog
@@ -75,6 +89,7 @@ class BotDialog extends Component {
 				<TextField
 					floatingLabelText="Bot Name"
 					defaultValue={botName}
+					autoFocus={true}
 					onChange={this.updateBotName}
 				/>
 				<br />

@@ -46,7 +46,7 @@ class SearchBot extends Component {
 					hintText="Find Bot By Name"
 					onChange={this.updateQuery}
 					style={textFieldStyle}
-					onBlur={this.stopSearch}
+					// onBlur={this.stopSearch}
 					autoFocus={true}
 				/> 
 				: <RaisedButton

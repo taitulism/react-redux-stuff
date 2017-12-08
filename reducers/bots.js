@@ -1,4 +1,3 @@
-// import initialState from './initial-state';
 import {
 	ADD_BOT,
 	RENAME_BOT,
@@ -39,33 +38,33 @@ export default function bots (state = initialState, action) {
 				platforms   : action.platforms
 			}, ...state];
 
-		case RENAME_BOT:
-			console.log(action);
 
+		case RENAME_BOT:
 			const editedBotData = {
 				botName: action.botName,
 				description: action.description
 			};
 
 			const newState = state.map((bot, index) =>
-			index === action.index
-				? Object.assign({}, bot, editedBotData)
-				: bot
-		);
+				index === action.index
+					? Object.assign({}, bot, editedBotData)
+					: bot
+			);
 
-			console.log(newState);
-			
 			return newState;
+
 
 		case CLONE_BOT:
 			const clonedBot = Object.assign({}, state[action.index]);
 
 			return state.concat(clonedBot);
 
+
 		case DELETE_BOT:
 			return state.filter((bot, index) =>
 				index !== action.index
 			);
+
 
 		default:
 			return state;
