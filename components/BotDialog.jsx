@@ -10,8 +10,10 @@ class BotDialog extends Component {
 	constructor (props) {
 		super(props);
 
-		const botName     = props.botData ? props.botData.botName     : '';
-		const description = props.botData ? props.botData.description : '';
+		const botData = props.botData;
+
+		const botName     = botData ? botData.botName     : '';
+		const description = botData ? botData.description : '';
 
 		this.state = {
 			botName,
@@ -39,7 +41,6 @@ class BotDialog extends Component {
 		const {actions, editBotIndex} = this.props;
 		const {botName, description} = this.state;
 		const index = this.props.editBotIndex;
-
 
 		if (editBotIndex) {
 			actions.renameBot(index, botName, description);
