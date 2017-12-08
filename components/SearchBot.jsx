@@ -6,8 +6,8 @@ import Search from 'material-ui/svg-icons/action/search';
 
 const textFieldStyle = {
 	width: 150,
-	marginRight: 20,
-	fontSize: 14
+	fontSize: 14,
+	margin: '-5px 20px 0 0'
 };
 
 class SearchBot extends Component {

@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import Add from 'material-ui/svg-icons/content/add-circle';
 
 import MyBotsTitle from './MyBotsTitle';
 import SearchBot   from './SearchBot';
-import CreateBot   from './CreateBot';
 import BotList     from './BotList';
 import BotDialog   from './BotDialog';
 
@@ -16,6 +17,10 @@ class MainSection extends Component {
 		}
 	}
 
+	openCreateDialog = () => {
+		this.props.actions.openDialog('CREATE');
+	};
+
 	render() {
 		const { main, bots, actions } = this.props;
 		const { isDialogOpen, dialogType, editBotIndex, searchQuery } = main;
@@ -27,7 +32,13 @@ class MainSection extends Component {
 				<div className="title-and-tools">
 					<MyBotsTitle count={bots.length} />
 					<SearchBot query={searchQuery} actions={actions} />
-					<CreateBot actions={actions} />
+					<RaisedButton
+						label="Create New Bot"
+						labelPosition="after"
+						icon={<Add />}
+						primary={true}
+						onClick={this.openCreateDialog}
+					/>
 				</div>
 				
 				{showAllBots
